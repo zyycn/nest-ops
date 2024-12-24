@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "nest-ops",
   "author": "Zyy",
-  "type": "module",
   "scripts": {
     "start": "nest start --watch",
     "start:debug": "nest start --debug --watch",
