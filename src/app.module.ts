@@ -24,7 +24,10 @@ import { AppService } from './app.service'
         exclude: [{ method: RequestMethod.ALL, path: 'check' }]
       })
     }),
-    ConfigModule.forRoot()
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: `.env.${process.env.NODE_ENV}`
+    })
   ],
   controllers: [AppController],
   providers: [AppService]

@@ -4,12 +4,13 @@
   "description": "nest-ops",
   "author": "Zyy",
   "scripts": {
-    "start": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
-    "build": "pnpm lint && nest build",
+    "start": "cross-env NODE_ENV=development nest start --watch",
+    "start:debug": "cross-env NODE_ENV=development nest start --debug --watch",
+    "start:prod": "cross-env NODE_ENV=production node dist/main",
+    "build": "cross-env NODE_ENV=production pnpm lint && nest build",
     "lint": "eslint src --fix",
     "prepare": "husky",
+    "prebuild": "rimraf dist",
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "nestjs-pino": "^4.2.0",
     "pino-http": "^10.3.0",
     "reflect-metadata": "^0.2.2",
+    "rimraf": "^6.0.1",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "@swc/core": "^1.10.1",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
+    "cross-env": "^7.0.3",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
