@@ -6,7 +6,6 @@ import { AppModule } from '@/app.module.js'
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     bufferLogs: true,
-    logger: false,
     forceCloseConnections: true
   })
 

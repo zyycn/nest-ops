@@ -2,9 +2,9 @@ import { resolve } from 'node:path'
 import { Module } from '@nestjs/common'
 import { LoggerModule } from 'nestjs-pino'
 import { ConfigModule } from '@nestjs/config'
+import { loggerConfig } from './config/pino-logger'
 import { AppService } from '@/app.service'
 import { AppController } from '@/app.controller'
-import { loggerConfig } from '~/config/pino-logger'
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { loggerConfig } from '~/config/pino-logger'
       isGlobal: true,
       load: [
         async () => {
-          return await import(resolve(`config/${process.env.NODE_ENV}.ts`))
+          return await import(resolve(`./src/config/env/${process.env.NODE_ENV}.ts`))
         }
       ]
     })

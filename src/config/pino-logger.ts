@@ -4,25 +4,24 @@ import { multistream } from 'pino'
 import { Params } from 'nestjs-pino'
 import dayjs from 'dayjs'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 export const loggerConfig: Params = {
   pinoHttp: [
     {
+      level: isProd ? 'info' : 'debug',
       quietReqLogger: true,
-      level: process.env.NODE_ENV !== 'production' ? 'info' : 'debug',
       timestamp: () => `,"time":"${dayjs().format('YYYY-MM-DD HH:mm:ss')}"`,
       genReqId: (req: IncomingMessage): string => {
         const requestId = req.headers['x-request-id']
         return typeof requestId === 'string' ? requestId : randomUUID()
       },
-      transport:
-        process.env.NODE_ENV !== 'production'
-          ? {
-              target: 'pino-pretty',
-              options: {
-                singleLine: true
-              }
-            }
-          : undefined
+      transport: isProd
+        ? undefined
+        : {
+            target: 'pino-pretty',
+            options: { sync: true, singleLine: true }
+          }
     },
     multistream(
       [
