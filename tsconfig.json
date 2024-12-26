@@ -8,17 +8,13 @@
     // 类型检查相关
     "skipLibCheck": true, // 跳过 .d.ts 文件的类型检查
     "strictNullChecks": false, // 允许 null 和 undefined 的使用
-    "noImplicitAny": false, // 允许隐式的 any 类型
     "strictBindCallApply": false, // 关闭对 bind、call 和 apply 方法的严格检查
-    "forceConsistentCasingInFileNames": false, // 文件名的大小写不强制一致
-    "noFallthroughCasesInSwitch": false, // switch 语句中允许没有 break 的情况
 
     // 装饰器与元数据支持
     "emitDecoratorMetadata": true, // 为装饰器生成元数据
     "experimentalDecorators": true, // 启用实验性的装饰器
 
     // 输出与生成
-    "declaration": true, // 生成 .d.ts 类型声明文件
     "removeComments": true, // 删除输出文件中的注释
     "sourceMap": true, // 生成 .map 文件，用于调试
     "incremental": true, // 启用增量编译
@@ -26,6 +22,7 @@
 
     // 模块路径与根目录
     "baseUrl": "./", // 模块的基路径设置为当前目录
+    "paths": { "~/*": ["/*"], "@/*": ["./src/*"] },
 
     // 默认导入支持
     "allowSyntheticDefaultImports": true // 允许从没有默认导出的模块中默认导入

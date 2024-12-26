@@ -17,9 +17,15 @@ importers:
       '@nestjs/core':
         specifier: ^10.4.15
         version: 10.4.15(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       nestjs-pino:
         specifier: ^4.2.0
         version: 4.2.0(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.1))(pino-http@10.3.0)
+      pino:
+        specifier: ^9.6.0
+        version: 9.6.0
       pino-http:
         specifier: ^10.3.0
         version: 10.3.0
@@ -90,6 +96,9 @@ importers:
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.10.1)(@types/node@22.10.2)(typescript@5.7.2)
+      tsconfig-paths:
+        specifier: ^4.2.0
+        version: 4.2.0
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -1095,6 +1104,9 @@ packages:
 
   dateformat@4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
+
+  dayjs@1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -4099,6 +4111,8 @@ snapshots:
       is-data-view: 1.0.2
 
   dateformat@4.6.3: {}
+
+  dayjs@1.11.13: {}
 
   debug@2.6.9:
     dependencies:
