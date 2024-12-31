@@ -4,8 +4,8 @@
 
     // 编译目标与模块设置
     "target": "ESNext", // 设置编译的 JavaScript 版本为 ESNext
-    "module": "NodeNext", // 模块系统为 Node.js 的 ESNext 模块
-    "moduleResolution": "nodenext", // 模块解析策略为 Node.js 的 ESNext
+    "module": "ESNext", // 模块系统为 Node.js 的 ESNext 模块
+    "moduleResolution": "bundler", // 模块解析策略为 Node.js 的 ESNext
 
     // 类型检查相关
     "skipLibCheck": true, // 跳过 .d.ts 文件的类型检查

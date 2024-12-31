@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common'
+import { $ } from 'zx'
 import { CreateLoginDto } from './dto/create-login.dto'
 import { UpdateLoginDto } from './dto/update-login.dto'
 
@@ -9,8 +10,9 @@ export class LoginService {
     return 'This action adds a new login'
   }
 
-  findAll() {
-    return `This action returns all login`
+  async findAll() {
+    const list = await $`ls -la`.text()
+    return list
   }
 
   findOne(id: number) {
